@@ -1,0 +1,17 @@
+security:
+  basic:
+    enabled: true
+  user:
+    name: edmin
+    password: hello
+server: 
+  port: 7001      # Eureka服务端口
+
+eureka: 
+  instance: 
+    hostname: eureka-7001.com
+  client: 
+    service-url:
+      defaultZone: http://edmin:hello@eureka-7002.com:7002/eureka,http://edmin:hello@eureka-7003.com:7003/eureka
+    register-with-eureka: false     # 当前的服务不注册到eureka之中
+    fetch-registry: false           # 该服务不通过eureka抓取任何注册信息
